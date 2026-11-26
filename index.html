@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>かたりぼん｜おじいちゃん・おばあちゃんの昔話を、話した言葉のまま本に</title>
+<meta name="description" content="おじいちゃん・おばあちゃんの昔話を、話した言葉のまま縦書きの本に。孫が電話で聞くだけの聞き書きの自分史です。作り手が毎回の聞き取りにつきそい、途中で確かめて2回まで直せます。声が聞けるQRコードつき。親や祖父母へのプレゼントに。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="かたりぼん｜話した言葉を、そのまま一冊に。">
+<meta property="og:description" content="おじいちゃん・おばあちゃんの昔話を、話した言葉のまま縦書きの本に。孫が電話で聞くだけの聞き書きの自分史です。作り手が毎回の聞き取りにつきそい、途中で確かめて2回まで直せます。声が聞けるQRコードつき。親や祖父母へのプレゼントに。">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<style>
+/* 一冊の本を開くように：上で語り手の言葉、そのあと見本・しくみ・つきそい・約束・値段・募集。縦書きは本人の言葉だけに使う */
+:root {
+  --bg: #f5f6f8;
+  --paper: #fdfdfc;
+  --ink: #1f2430;
+  --muted: #5d6472;
+  --line: #dde1e8;
+  --indigo: #2d4370;
+  --indigo-soft: #e4e9f2;
+  --shu: #b8432a;
+  --shu-ink: #ffffff;
+  --desk: #1e232d;
+  /* 端末に入っている書体だけを使う（Windows：游明朝・游ゴシック、Apple：ヒラギノ） */
+  --title: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+  --book: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Noto Serif JP", serif;
+  --body: "Yu Gothic", "YuGothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", "Noto Sans JP", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171d; --paper: #1c2029; --ink: #e7e9ee; --muted: #a3aab8; --line: #313847;
+    --indigo: #9fb4de; --indigo-soft: #232f45; --shu: #e07a62; --shu-ink: #1a1210; --desk: #0e1116; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171d; --paper: #1c2029; --ink: #e7e9ee; --muted: #a3aab8; --line: #313847;
+  --indigo: #9fb4de; --indigo-soft: #232f45; --shu: #e07a62; --shu-ink: #1a1210; --desk: #0e1116; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-weight: 500; font-size: 16px; line-height: 1.85;
+}
+.band { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 56px; }
+.inner { max-width: 1000px; margin: 0 auto; display: grid; gap: 28px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.4; }
+h1 { font-family: var(--title); font-weight: 700; font-size: clamp(1.9rem, 5.2vw, 3rem); letter-spacing: .04em; }
+h2 { font-family: var(--title); font-weight: 700; font-size: clamp(1.4rem, 3.4vw, 1.9rem); letter-spacing: .06em; }
+h3 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+.eyebrow { font-size: .78rem; letter-spacing: .24em; color: var(--indigo); font-weight: 700; }
+.lead { color: var(--muted); max-width: 36em; }
+a { color: var(--indigo); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; border-radius: 4px; }
+.cta {
+  display: inline-flex; align-items: center; gap: .5em; background: var(--shu); color: var(--shu-ink); text-decoration: none;
+  font-weight: 700; padding: 14px 24px; border-radius: 6px; justify-self: start; letter-spacing: .04em;
+}
+.cta:hover { filter: brightness(1.06); }
+
+/* ヘッダー */
+header.band { padding-block: 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+header .inner { grid-template-columns: 1fr auto; align-items: center; }
+.logo { font-family: var(--title); font-weight: 700; font-size: 1.35rem; letter-spacing: .14em; color: var(--ink); text-decoration: none; }
+.logo small { font-family: var(--body); font-weight: 400; font-size: .7rem; letter-spacing: .1em; color: var(--muted); margin-left: .8em; }
+header nav { display: flex; gap: 18px; font-size: .88rem; }
+header nav a { color: var(--muted); text-decoration: none; }
+@media (max-width: 640px) { header nav a:not(.nav-cta) { display: none; } }
+
+/* 一番上 */
+.hero .inner { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; gap: 40px; }
+@media (max-width: 760px) { .hero .inner { grid-template-columns: 1fr; } }
+.hero-text { display: grid; gap: 22px; min-width: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px 10px; color: var(--muted); font-size: .85rem; padding: 0; margin: 0; list-style: none; }
+.tags li { border: 1px solid var(--line); border-radius: 999px; padding: 1px 12px; background: var(--paper); }
+.quote-page {
+  background: var(--paper); border: 1px solid var(--line); aspect-ratio: 1 / 1.25; max-width: 100%; width: min(380px, 100%);
+  justify-self: center; position: relative; container-type: inline-size; box-shadow: 0 20px 40px rgba(20, 24, 34, .12); margin: 0;
+}
+.quote-page .v {
+  writing-mode: vertical-rl; position: absolute; inset: 9cqw 10cqw 12cqw; font-family: var(--book); font-size: 5.2cqw; line-height: 2.1; letter-spacing: .06em;
+}
+.quote-page .v p { text-indent: 1em; }
+.quote-page .who { position: absolute; left: 9cqw; bottom: 6cqw; font-size: 3.2cqw; color: var(--muted); letter-spacing: .14em; }
+
+/* 見本 */
+.desk { background: var(--desk); color: #d4d9e3; }
+.desk .eyebrow { color: #9fb4de; }
+.desk .lead { color: #a7afbe; }
+.desk h2 { color: #eef0f4; }
+.page {
+  width: min(300px, 100%); aspect-ratio: 1 / 1.414; max-width: 100%; background: #fafaf7; color: #23221f; position: relative;
+  overflow: hidden; container-type: inline-size; box-shadow: 0 16px 34px rgba(0, 0, 0, .45);
+}
+.cover { display: grid; grid-template-rows: 1fr auto; padding: 7cqw; gap: 5cqw; }
+.cover-top { display: flex; flex-direction: row-reverse; gap: 5cqw; min-height: 0; }
+.photo { flex: 1; min-width: 0; background: linear-gradient(#cfc6b6, #b9ad98 55%, #8f8370); position: relative; }
+.photo span { position: absolute; inset: auto 0 4cqw; text-align: center; font-size: 3.2cqw; color: #514b42; letter-spacing: .1em; }
+.photo canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.photo:has(canvas) { background: #f3f1ec; box-shadow: 0 1px 3px rgba(0, 0, 0, .25); }
+.photo:has(canvas) span { color: #8a8378; bottom: 1.2cqw; font-size: 2.6cqw; }
+.cover-title { writing-mode: vertical-rl; font-family: var(--title); font-weight: 700; font-size: 7.6cqw; line-height: 1.25; letter-spacing: .08em; margin: 0; }
+.byline { border-top: 1px solid #d9d6cf; padding-top: 3.5cqw; display: grid; gap: .6cqw; font-family: var(--book); font-size: 4.3cqw; }
+.byline small { font-size: 2.9cqw; color: #6b6862; letter-spacing: .2em; margin-right: 1.5cqw; }
+.body { writing-mode: vertical-rl; position: absolute; inset: 8cqw 8cqw 10cqw; font-family: var(--book); font-size: 3.3cqw; line-height: 1.95; letter-spacing: .04em; }
+.body p { text-indent: 1em; }
+.body p.q { text-indent: 0; color: #2d4370; font-family: var(--body); font-size: .88em; margin-inline-start: 1.4em; margin-inline-end: .6em; }
+.body p.q::before { content: "―― "; }
+.chapter { margin: 0 0 0 1.6em; font-family: var(--title); font-weight: 700; font-size: 1.7em; letter-spacing: .12em; line-height: 1.3; }
+.chapter span { display: block; font-size: .5em; color: #6b6862; letter-spacing: .3em; }
+.qr { position: absolute; left: 8cqw; bottom: 8cqw; display: flex; gap: 2.4cqw; align-items: center; }
+.qr i { width: 14cqw; height: 14cqw; display: block; background:
+  conic-gradient(from 90deg at 30% 30%, #23221f 25%, transparent 0) 0 0 / 4cqw 4cqw, #fafaf7; border: 1.6cqw solid #23221f; }
+.qr b { font-family: var(--body); font-size: 2.4cqw; font-weight: 400; color: #6b6862; max-width: 22cqw; line-height: 1.5; }
+.note-desk { text-align: center; font-size: .8rem; color: #8f98a8; }
+
+/* 3D の本：表紙は右（背）を軸に、手前に持ち上がって右へ開く（右開きの本） */
+.stage { display: grid; justify-items: center; padding-block: 24px 36px; overflow: hidden; }
+.book3d {
+  --w: min(300px, calc((100vw - 40px) / 2)); --h: calc(var(--w) * 1.414); --t: calc(var(--w) * .09);
+  width: calc(var(--w) * 2); height: var(--h); position: relative; perspective: 3200px; max-width: 100%;
+}
+.book {
+  position: absolute; inset: 0; transform-style: preserve-3d;
+  transform: translateX(calc(var(--w) / 2)) rotateX(8deg) rotateY(22deg);
+  transition: transform 1.2s cubic-bezier(.3, .7, .2, 1);
+}
+.book.open { transform: translateX(0) rotateX(4deg) rotateY(0); }
+.book .face { position: absolute; top: 0; left: 0; width: var(--w); height: var(--h); aspect-ratio: auto; box-shadow: none; }
+.book .under { box-shadow: inset -14px 0 18px -14px rgba(0, 0, 0, .35); }
+.edge { position: absolute; transition: opacity .6s; }
+.edge.fore { left: 0; top: 0; width: var(--t); height: var(--h); transform-origin: left center; transform: rotateY(-90deg);
+  background: repeating-linear-gradient(90deg, #efede6 0 2px, #dcd8cd 2px 3px); }
+.edge.spine { left: calc(var(--w) - var(--t)); top: 0; width: var(--t); height: var(--h); transform-origin: right center; transform: rotateY(90deg);
+  background: #3a4a6b; color: #e9ecf2; display: grid; place-items: center; overflow: hidden; }
+.edge.spine span { writing-mode: vertical-rl; font-family: var(--title); font-size: calc(var(--t) * .5); letter-spacing: .1em; white-space: nowrap; }
+.edge.bottom { left: 0; top: calc(var(--h) - var(--t)); width: var(--w); height: var(--t); transform-origin: center bottom; transform: rotateX(-90deg);
+  background: repeating-linear-gradient(180deg, #efede6 0 2px, #dcd8cd 2px 3px); }
+.book.open .edge { opacity: 0; }
+.flap { position: absolute; top: 0; left: 0; width: var(--w); height: var(--h); transform-style: preserve-3d; transform-origin: right center;
+  transform: translateZ(var(--t)) rotateY(0deg); transition: transform 1.2s cubic-bezier(.3, .7, .2, 1); }
+.book.open .flap { transform: translateZ(1px) rotateY(180deg); }
+.flap .face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flap .front { box-shadow: 0 18px 40px rgba(0, 0, 0, .5); }
+.flap .back { transform: rotateY(180deg); box-shadow: inset 14px 0 18px -14px rgba(0, 0, 0, .35); }
+.book:not(.open) .under { visibility: hidden; transition: visibility 0s 1.2s; }
+.open-btn { justify-self: center; font: inherit; font-weight: 700; color: #eef0f4; background: transparent; border: 1px solid #4a5468; border-radius: 6px; padding: 10px 22px; cursor: pointer; }
+.open-btn:hover { border-color: #9fb4de; }
+.open-btn:focus-visible { outline: 3px solid #9fb4de; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .book, .flap, .edge { transition: none; } }
+
+/* しくみ */
+ol.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; counter-reset: s; }
+ol.steps li { counter-increment: s; padding: 22px 18px 22px 0; border-top: 2px solid var(--ink); display: grid; gap: 8px; align-content: start; min-width: 0; }
+ol.steps li + li { padding-left: 18px; border-left: 1px solid var(--line); }
+@media (max-width: 900px) { ol.steps li + li { border-left: 0; padding-left: 0; } }
+ol.steps li::before { content: "その" counter(s, cjk-ideographic); font-family: var(--title); font-weight: 700; color: var(--indigo); letter-spacing: .14em; }
+ol.steps p { color: var(--muted); font-size: .93rem; }
+.who-does { font-size: .75rem; letter-spacing: .12em; color: var(--muted); }
+
+/* つきそい：作り手からのひとこと（便箋のメモ） */
+.alongside .inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 36px; }
+@media (max-width: 760px) { .alongside .inner { grid-template-columns: 1fr; } }
+.alongside .text { display: grid; gap: 20px; min-width: 0; }
+.memo { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 22px 22px 18px; display: grid; gap: 12px; min-width: 0;
+  box-shadow: 0 12px 28px rgba(20, 24, 34, .08); }
+.memo .from { font-size: .75rem; letter-spacing: .14em; color: var(--muted); }
+.memo p { font-family: var(--book); }
+.memo .next { color: var(--indigo); }
+.memo .sign { justify-self: end; font-size: .85rem; color: var(--muted); }
+ul.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+ul.checks li { display: grid; gap: 2px; padding-left: 16px; border-left: 3px solid var(--indigo); }
+ul.checks li span { color: var(--muted); font-size: .93rem; }
+
+/* 約束 */
+.promises { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px 36px; }
+.promise { display: grid; gap: 6px; padding-left: 16px; border-left: 3px solid var(--indigo); min-width: 0; }
+.promise p { color: var(--muted); font-size: .93rem; }
+.example { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.example div { display: grid; gap: 6px; min-width: 0; }
+.example .tag { font-size: .75rem; letter-spacing: .14em; color: var(--muted); }
+.example blockquote { margin: 0; font-family: var(--book); line-height: 1.9; }
+.example .no blockquote { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--shu); }
+
+/* 値段 */
+.paper { background: var(--paper); }
+.price { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+@media (max-width: 760px) { .price { grid-template-columns: 1fr; } }
+.price-main { display: grid; gap: 14px; min-width: 0; }
+.price-main .yet { font-family: var(--title); font-weight: 700; font-size: clamp(1.3rem, 3.4vw, 1.6rem); line-height: 1.5; }
+ul.inc { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+
+/* 募集 */
+.monitor { background: var(--indigo-soft); }
+.monitor .inner { gap: 22px; }
+.monitor ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.cols > div { display: grid; gap: 8px; align-content: start; min-width: 0; }
+
+/* よくある質問 */
+details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::after { content: "＋"; color: var(--indigo); }
+details[open] summary::after { content: "－"; }
+details p { color: var(--muted); margin-top: 8px; max-width: 42em; }
+
+footer.band { padding-block: 32px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+footer .inner { gap: 10px; }
+</style>
+
+<header class="band">
+  <div class="inner">
+    <a class="logo" href="#top">かたりぼん<small>語り手が著者になる本</small></a>
+    <nav aria-label="ページ内の案内">
+      <a href="#sample">見本</a><a href="#how">しくみ</a><a href="#alongside">つきそい</a><a href="#faq">質問</a>
+      <a class="nav-cta" href="#monitor">無料モニター</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="band hero">
+    <div class="inner">
+      <div class="hero-text">
+        <p class="eyebrow">おじいちゃん・おばあちゃんの本</p>
+        <h1>話した言葉を、<br>そのまま一冊に。</h1>
+        <p class="lead">孫が電話で昔の話を聞くだけ。方言も、口ぐせも、笑い声も言い回しを直さずに、縦書きの本にします。聞き取りには作り手が毎回つきそい、章ごとのQRコードから本人の声も聞けます。</p>
+        <ul class="tags" aria-label="こんなときに">
+          <li>親・祖父母へのプレゼント</li><li>敬老の日</li><li>還暦・喜寿・米寿のお祝い</li><li>帰省のときの話のきっかけに</li>
+        </ul>
+        <a class="cta" href="#monitor">無料モニターに応募する（3組）</a>
+      </div>
+      <figure class="quote-page" aria-label="本人の言葉の例（見本）">
+        <div class="v">
+          <p>うちはなあ、ほんまに貧乏やってん。</p>
+          <p>せやけど、冬になったら、お母ちゃんが毎晩、芋ふかしてくれてな。あの甘いにおい、いまでも覚えてるわ。</p>
+        </div>
+        <figcaption class="who">見本（架空の人物）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band desk" id="sample" aria-labelledby="t-sample">
+    <div class="inner">
+      <p class="eyebrow">見本</p>
+      <h2 id="t-sample">表紙には、語り手の名前を著者として</h2>
+      <p class="lead">表紙の写真は家族が選びます。語り手が著者、話を聞いた孫が「聞き手」。中は縦書きで、孫の質問と本人の言葉がそのまま並びます。</p>
+      <div class="stage">
+        <div class="book3d" aria-label="見本の本。ボタンで開いたり閉じたりできます">
+          <div class="book" id="book">
+            <!-- 表紙の下（開いたときの左ページ） -->
+            <div class="page face under">
+              <div class="body">
+                <p class="q">それ、どこの家？</p>
+                <p>玉造の長屋。六畳ひと間に五人や。寝返りもうたれへん。（笑）</p>
+                <p>でもな、いま思たら、あの頃がいっちばん楽しかったかもしれへんなあ。お腹はすいてたけど、さみしいことはなかった。</p>
+                <p class="q">ばあちゃんは、お母さんになんて呼ばれてたん？</p>
+                <p>ハナちゃん、や。……もう、そう呼んでくれる人、だあれもおらんようになったなあ。</p>
+              </div>
+            </div>
+            <!-- 本の厚み -->
+            <div class="edge fore" aria-hidden="true"></div>
+            <div class="edge spine" aria-hidden="true"><span>うちはなあ、ほんまに貧乏やってん　山田ハナ</span></div>
+            <div class="edge bottom" aria-hidden="true"></div>
+            <!-- 表紙（裏が開いたときの右ページ） -->
+            <div class="flap">
+              <div class="page face front cover">
+                <div class="cover-top">
+                  <p class="cover-title">うちはなあ、<br>ほんまに貧乏やってん</p>
+                  <div class="photo"><canvas id="old-photo" width="300" height="420" aria-hidden="true"></canvas><span>家族が選んだ写真</span></div>
+                </div>
+                <div class="byline"><span><small>語り</small>山田 ハナ</span><span><small>聞き手</small>山田 ゆうと</span></div>
+              </div>
+              <div class="page face back">
+                <div class="body">
+                  <h3 class="chapter"><span>第二章</span>芋のにおい</h3>
+                  <p class="q">ばあちゃん、子どもの頃って何食べてたん？</p>
+                  <p>何食べてたって、あんた、ろくなもんあらへんかったよ。うちはなあ、ほんまに貧乏やってん。父ちゃんは早うに亡くなってな、お母ちゃんが一人で、わたしら四人育ててくれたんよ。</p>
+                  <p>せやけど、冬になったら、お母ちゃんが毎晩、芋ふかしてくれてな。蓋あけたら、ぶわーって湯気が出てな、あの甘いにおい。いまでも覚えてるわ。</p>
+                </div>
+                <div class="qr"><i aria-hidden="true"></i><b>この話をしている声が聞けます</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="open-btn" id="open-btn" aria-controls="book" aria-pressed="false">本を開く</button>
+      <p class="note-desk">見本の人物・お話・写真は架空のものです。QRコードは見本のため読み取れません。</p>
+    </div>
+  </section>
+
+  <section class="band" id="how" aria-labelledby="t-how">
+    <div class="inner">
+      <p class="eyebrow">しくみ</p>
+      <h2 id="t-how">スマホもアプリも、語り手には要りません</h2>
+      <ol class="steps">
+        <li><span class="who-does">家族がすること</span><h3>聞きたいことを選ぶ</h3><p>質問カードから、聞きたいことを最大20個選びます。自分で考えた質問も入れられます。</p></li>
+        <li><span class="who-does">孫がすること</span><h3>電話で聞いて録音する</h3><p>1回15〜30分、いつもの電話で。語り手は話すだけです。録音を送ると、作り手から次の聞き方のひとことが届きます。</p></li>
+        <li><span class="who-does">家族と作り手</span><h3>最初の1章を確かめる</h3><p>1回目の電話の分を、本の形にしてお見せします。この感じで進めてよいかを、早いうちに確かめられます。</p></li>
+        <li><span class="who-does">家族と作り手</span><h3>下書きを読んで直す</h3><p>全部の章がそろったら下書きをお送りします。載せる話や順番、写真は2回まで直せます。</p></li>
+        <li><span class="who-does">作り手</span><h3>本が届く</h3><p>縦書きの本にして、声のQRコードをつけてお届けします。音声ファイルもお渡しします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band paper alongside" id="alongside" aria-labelledby="t-alongside">
+    <div class="inner">
+      <div class="text">
+        <p class="eyebrow">つきそい</p>
+        <h2 id="t-alongside">聞くのは孫。作り手は、毎回となりにいます</h2>
+        <p class="lead">話を聞くのは、会社の記者ではなく家族です。だから、身内にしか話さない話が出てきます。そのかわり、聞き手をひとりにしません。本をつくる本人が、最初から最後まで直接やりとりします。</p>
+        <ul class="checks">
+          <li>毎回の録音を聞いて、ひとこと返します<span>「この話はもう少し聞けそうです」「次はこう聞いてみてください」</span></li>
+          <li>途中で2回、確かめられます<span>最初の1章と、全体の下書き。気に入らないところは2回まで直せます</span></li>
+          <li>作り手と直接話せます<span>はじめに一度、聞きたいことや本の雰囲気をうかがいます。あとはメッセージで</span></li>
+        </ul>
+      </div>
+      <figure class="memo" aria-label="作り手から聞き手へのひとことの例">
+        <span class="from">作り手から、聞き手のゆうとさんへ（例）</span>
+        <p>2回目の録音、ありがとうございます。長屋の話、とてもよかったです。</p>
+        <p>おばあさまが「お腹はすいてたけど、さみしいことはなかった」と言ったところで、少し間がありました。</p>
+        <p class="next">次の電話では「そのころ、いちばん仲のよかった人は？」と聞いてみてください。</p>
+        <span class="sign">かたりぼん</span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="t-promise">
+    <div class="inner">
+      <p class="eyebrow">約束</p>
+      <h2 id="t-promise">言い回しは、書き換えません</h2>
+      <div class="example">
+        <div class="no"><span class="tag">よくある自分史</span><blockquote>私は昭和二十八年、貧しいながらも温かい家庭に生まれました。</blockquote></div>
+        <div><span class="tag">かたりぼん</span><blockquote>うちはなあ、ほんまに貧乏やってん。せやけど、お母ちゃんが毎晩、芋ふかしてくれてな。</blockquote></div>
+      </div>
+      <div class="promises">
+        <div class="promise"><h3>本人の言葉のまま</h3><p>手を入れるのは、「えー」「あのー」などの言いよどみを取ることと、同じ話のくり返しをまとめることだけ。言い回しを整えたり、話を足したりはしません。</p></div>
+        <div class="promise"><h3>声が残る</h3><p>章ごとのQRコードで、その話をしている声が聞けます。QRコードの声は、本が届いてから10年間聞けるようにします。音声ファイルそのものもお渡しするので、そのあとも手元に残ります。</p></div>
+        <div class="promise"><h3>スマホがなくても読める</h3><p>紙の本なので、語り手本人が自分で開いて読めます。</p></div>
+        <div class="promise"><h3>録音は本づくりだけに</h3><p>録音と話の内容は、本をつくるためだけに使います。渡すのは、本づくりを手伝う会社（文字起こし・印刷）だけです。本が届いたあと、決めた時期にこちらの手元から消します。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band paper" id="price" aria-labelledby="t-price">
+    <div class="inner">
+      <p class="eyebrow">値段</p>
+      <h2 id="t-price">値段は、モニターのあとに決めます</h2>
+      <div class="price">
+        <div class="price-main">
+          <p class="yet">本物を3冊つくって、かかる手間を確かめてから決めます。</p>
+          <p class="lead">決まったら、このページでお知らせします。何ページになっても同じ値段にする予定です（録音は合計3時間まで、本は120ページまで）。</p>
+        </div>
+        <div class="price-main">
+          <h3>1冊に含まれるもの（予定）</h3>
+          <ul class="inc">
+            <li>縦書きの本 1冊</li>
+            <li>章ごとの声のQRコード</li>
+            <li>音声ファイル一式</li>
+            <li>質問カード</li>
+            <li>毎回の聞き取りへのひとことと、2回までの直し</li>
+          </ul>
+          <p class="lead" style="font-size:.88rem">追加の1冊、ハードカバー、表紙の写真を手描きのイラストにする、なども用意する予定です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band monitor" id="monitor" aria-labelledby="t-monitor">
+    <div class="inner">
+      <p class="eyebrow">無料モニター募集</p>
+      <h2 id="t-monitor">最初の3組は、無料でおつくりします</h2>
+      <p class="lead">サービスを始める前に、本物の本をつくってやり方を確かめたいと思っています。本・送料も無料です。かわりに、できあがった本の感想を聞かせてください。</p>
+      <div class="cols">
+        <div>
+          <h3>してもらうこと</h3>
+          <ul>
+            <li>質問カードを見ながら、電話で祖父母に話を聞く（1回15〜30分、6回くらい、1〜2か月）</li>
+            <li>通話を録音して送る</li>
+            <li>最初の1章と下書きを読んで確かめる</li>
+            <li>本の感想を聞かせる</li>
+          </ul>
+        </div>
+        <div>
+          <h3>応募の条件</h3>
+          <ul>
+            <li>祖父母ご本人が「話してもいい、本にしてもいい」と言ってくれること</li>
+            <li>録音を本づくりのためだけに使い、終わったら消すことに同意してもらえること</li>
+          </ul>
+          <p class="lead" style="font-size:.88rem">応募が多いときは、こちらで選ばせてください。選ばれなかった方にも、必ずご連絡します。</p>
+        </div>
+      </div>
+      <a class="cta" id="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSeqKzRuzocex_--3XnKOAxa-gBpAjmnqtGjfwiykYw6gas6mA/viewform" target="_blank" rel="noopener">応募フォームを開く（2〜3分）</a>
+      <p class="lead" style="font-size:.85rem">Google フォームが別のページで開きます。ログインはいりません。</p>
+    </div>
+  </section>
+
+  <section class="band" id="faq" aria-labelledby="t-faq">
+    <div class="inner">
+      <p class="eyebrow">よくある質問</p>
+      <h2 id="t-faq">よくある質問</h2>
+      <div>
+        <details><summary>ふつうの自分史づくりと、何がちがいますか</summary><p>話を聞くのが、会社の記者ではなく孫だということです。家族にしか話さない話が、その人の言い方のまま残ります。記者が訪ねる自分史より手間がかからないぶん、値段も抑える予定です。</p></details>
+        <details><summary>方言や、聞き取りにくい話し方でも大丈夫ですか</summary><p>大丈夫です。方言はそのまま本にします。聞き取りにくいところは、文字にしたものをご家族に確かめてもらいます。名前や地名は、ご家族がいちばんよく分かるからです。</p></details>
+        <details><summary>電話で聞くのが苦手です</summary><p>質問カードに、そのまま言える聞き方と、話を深める聞き方を書いてあります。録音を送るたびに、作り手から次の聞き方のひとことも届きます。話をさえぎらず、「それで？」と続きを聞くだけで十分です。</p></details>
+        <details><summary>途中で気に入らなかったら、どうなりますか</summary><p>最初の1章の段階で、雰囲気をお見せします。全体の下書きのあと、載せる話・順番・見出し・写真・表紙は2回まで直せます。ただし、語り手の言葉を言いかえることはしません。ご本人が言い直したいときは、ご本人の言葉で録り直して入れます。</p></details>
+        <details><summary>録音はどうすればいいですか</summary><p>電話をスピーカーにして、もう1台のスマホのボイスメモで録るのがいちばん簡単です。録り方をまとめた紙をお渡しします。録音の前に、必ずご本人に許可をもらってください。</p></details>
+        <details><summary>AIを使っていますか</summary><p>録音を文字にすることと、話を質問ごとに並べることに使っています。文章をAIに書かせることはしません。本に載るのは、ご本人が話した言葉だけです。</p></details>
+        <details><summary>遠くに住んでいても頼めますか</summary><p>はい。電話で聞くので、どこに住んでいても大丈夫です。本は郵送でお届けします。</p></details>
+        <details><summary>つらい話が出たらどうしますか</summary><p>無理に聞かないでください。質問カードに、つらい話になったときの対応も書いてあります。本に載せたくない話は、確かめるときに外せます。</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="band">
+  <div class="inner">
+    <p><strong>かたりぼん</strong>　運営：hitotema-lab</p>
+    <p>お問い合わせ：<span style="user-select:all">hitotemalab.office@gmail.com</span></p>
+    <p>応募フォームで集めた情報は、モニターの選考とご連絡にだけ使い、選考が終わったら消します。録音・写真・話の内容は、本づくりのためだけに使い、本づくりを手伝う会社（文字起こし・印刷）のほかには渡しません。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  // 表紙の写真の代わり：白いふちの古い写真（若い頃の女性のぼんやりした姿）
+  (function () {
+    var c = document.getElementById("old-photo"); if (!c || !c.getContext) return;
+    var g = c.getContext("2d"), W = c.width, H = c.height, m = 14, b = 34;
+    g.fillStyle = "#f3f1ec"; g.fillRect(0, 0, W, H);
+    var x0 = m, y0 = m, w = W - 2 * m, h = H - m - b;
+    g.save(); g.beginPath(); g.rect(x0, y0, w, h); g.clip();
+    var bg = g.createLinearGradient(0, y0, 0, y0 + h);
+    bg.addColorStop(0, "#cdbb9c"); bg.addColorStop(.6, "#b49e7c"); bg.addColorStop(1, "#8c775a");
+    g.fillStyle = bg; g.fillRect(x0, y0, w, h);
+    g.fillStyle = "rgba(255,248,230,.18)"; g.fillRect(x0, y0 + h * .05, w * .28, h * .55);
+    g.filter = "blur(2.2px)";
+    var cx = W / 2, hy = y0 + h * .36;
+    g.fillStyle = "#4a3b2b";
+    g.beginPath(); g.ellipse(cx, hy - 52, 30, 24, 0, 0, Math.PI * 2); g.fill();
+    g.beginPath(); g.ellipse(cx, hy - 4, 46, 52, 0, Math.PI, 0); g.fill();
+    g.fillStyle = "#a98c6b";
+    g.beginPath(); g.ellipse(cx, hy + 6, 36, 46, 0, 0, Math.PI * 2); g.fill();
+    g.fillStyle = "#4a3b2b";
+    g.beginPath(); g.ellipse(cx, hy - 26, 40, 22, 0, Math.PI, 0); g.fill();
+    g.fillStyle = "#a28565"; g.fillRect(cx - 13, hy + 44, 26, 26);
+    g.fillStyle = "#5b4a39";
+    g.beginPath(); g.moveTo(cx - 118, y0 + h); g.quadraticCurveTo(cx - 110, hy + 78, cx - 30, hy + 70);
+    g.lineTo(cx, hy + 104); g.lineTo(cx + 30, hy + 70); g.quadraticCurveTo(cx + 110, hy + 78, cx + 118, y0 + h); g.closePath(); g.fill();
+    g.fillStyle = "#e7dcc6";
+    g.beginPath(); g.moveTo(cx - 30, hy + 70); g.lineTo(cx, hy + 104); g.lineTo(cx + 30, hy + 70); g.lineTo(cx + 18, hy + 66); g.lineTo(cx, hy + 86); g.lineTo(cx - 18, hy + 66); g.closePath(); g.fill();
+    g.filter = "none";
+    var vg = g.createRadialGradient(cx, y0 + h * .45, h * .2, cx, y0 + h * .5, h * .75);
+    vg.addColorStop(0, "rgba(0,0,0,0)"); vg.addColorStop(1, "rgba(40,28,15,.45)");
+    g.fillStyle = vg; g.fillRect(x0, y0, w, h);
+    var img = g.getImageData(x0, y0, w, h), d = img.data, s = 11;
+    for (var i = 0; i < d.length; i += 4) { s = (s * 16807) % 2147483647; var n = (s / 2147483647 - .5) * 22; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
+    g.putImageData(img, x0, y0);
+    g.restore();
+  })();
+
+  var book = document.getElementById("book"), btn = document.getElementById("open-btn");
+  function set(open) {
+    book.classList.toggle("open", open);
+    btn.textContent = open ? "本を閉じる" : "本を開く";
+    btn.setAttribute("aria-pressed", String(open));
+  }
+  btn.addEventListener("click", function () { set(!book.classList.contains("open")); });
+  // 見本のところまで来たら、一度だけ自動で開く
+  if ("IntersectionObserver" in window) {
+    var done = false;
+    var io = new IntersectionObserver(function (es) {
+      if (!done && es[0].isIntersecting) { done = true; setTimeout(function () { set(true); }, 700); io.disconnect(); }
+    }, { threshold: .3 });
+    io.observe(book);
+  }
+})();
+</script>
+</body>
+</html>
