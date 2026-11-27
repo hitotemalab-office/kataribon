@@ -62,6 +62,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   font-weight: 700; padding: 14px 24px; border-radius: 6px; justify-self: start; letter-spacing: .04em;
 }
 .cta:hover { filter: brightness(1.06); }
+.form-wrap { background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; max-width: 760px; }
+.form-wrap iframe { display: block; width: 100%; height: 2300px; border: 0; }
+@media (max-width: 640px) { .form-wrap iframe { height: 2700px; } }
 
 /* ヘッダー */
 header.band { padding-block: 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
@@ -233,7 +236,7 @@ footer .inner { gap: 10px; }
         <ul class="tags" aria-label="こんなときに">
           <li>親・祖父母へのプレゼント</li><li>敬老の日</li><li>還暦・喜寿・米寿のお祝い</li><li>帰省のときの話のきっかけに</li>
         </ul>
-        <a class="cta" href="#monitor">無料モニターに応募する（3組）</a>
+        <a class="cta" href="#apply">無料モニターに応募する（3組）</a>
       </div>
       <figure class="quote-page" aria-label="本人の言葉の例（見本）">
         <div class="v">
@@ -395,8 +398,12 @@ footer .inner { gap: 10px; }
           <p class="lead" style="font-size:.88rem">応募が多いときは、こちらで選ばせてください。選ばれなかった方にも、必ずご連絡します。</p>
         </div>
       </div>
-      <a class="cta" id="apply" href="https://docs.google.com/forms/d/e/1FAIpQLSeqKzRuzocex_--3XnKOAxa-gBpAjmnqtGjfwiykYw6gas6mA/viewform" target="_blank" rel="noopener">応募フォームを開く（2〜3分）</a>
-      <p class="lead" style="font-size:.85rem">Google フォームが別のページで開きます。ログインはいりません。</p>
+      <h3 id="apply">応募フォーム（2〜3分）</h3>
+      <p class="lead" style="font-size:.85rem">このまま下に書きこんで送れます。ログインはいりません。</p>
+      <div class="form-wrap">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqKzRuzocex_--3XnKOAxa-gBpAjmnqtGjfwiykYw6gas6mA/viewform?embedded=true" title="無料モニター 応募フォーム" loading="lazy">読み込んでいます…</iframe>
+      </div>
+      <p class="lead" style="font-size:.85rem">うまく表示されないときは、<a href="https://docs.google.com/forms/d/e/1FAIpQLSeqKzRuzocex_--3XnKOAxa-gBpAjmnqtGjfwiykYw6gas6mA/viewform" target="_blank" rel="noopener">こちらから別のページで開けます</a>。</p>
     </div>
   </section>
 
